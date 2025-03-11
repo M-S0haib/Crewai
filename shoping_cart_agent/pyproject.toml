@@ -1,0 +1,25 @@
+[project]
+name = "shoping_cart_agent"
+version = "0.1.0"
+description = "shoping_cart_agent using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<3.13"
+dependencies = [
+    "crewai[tools]>=0.100.0",
+]
+
+[project.scripts]
+shoping_cart_agent = "shoping_cart_agent.shoping_agent_wiht_memory:main"
+
+mathematical_operations = "shoping_cart_agent.Mathematician:kickoff"
+run_shoping_cart_agent = "shoping_cart_agent.shoping_agent_wiht_memory:main"
+
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+[tool.hatch.build.targets.wheel]
+packages = ["src/shoping_cart_agent"]
+
+[tool.crewai]
+type = "crew"
